@@ -1,0 +1,27 @@
+{
+  "name": "react-testing",
+  "version": "1.0.0",
+  "description": "jest intro",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tigran105/react-testing.git"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "jest"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tigran105/react-testing/issues"
+  },
+  "homepage": "https://github.com/Tigran105/react-testing#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
