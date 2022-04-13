@@ -1,6 +1,8 @@
 const Lodash = require("./sync")
 
 let _ = new Lodash()
+
+
 describe("Lodash: Compact", () => {
     ///////////////////////////////////////////////////////////////
     // beforeEach --- amen testy lineluc kanchvuma
@@ -36,5 +38,32 @@ describe("Lodash: Compact", () => {
         expect(_.compact(array)).not.toContain(0)
         expect(_.compact(array)).not.toContain("")
         expect(_.compact(array)).not.toContain(null)
+    })
+})
+
+describe("Lodash: GroupBy", () => {
+    test("should be defined", () => {
+        expect(_.groupBy).toBeDefined()
+        expect(_.groupBy).not.toBeUndefined()
+    })
+    test("should group array items by length", () => {
+        const array = [2.2, 2.4, 4.2, 3.1]
+        const expectedResult = {
+            2: [2.2, 2.4],
+            4: [4.2],
+            3: [3.1]
+        }
+        expect(_.groupBy(array, Math.floor)).toEqual(expectedResult)
+    })
+    test("should group array items by length", () => {
+        const array = ["one", "two", "three"]
+        const expectedResult = {
+            5: ["three"],
+            3: ["one", "two"]
+        }
+        expect(_.groupBy(array, "length")).toEqual(expectedResult)
+    })
+    test("should NOT return array", () => {
+        expect(_.groupBy([], Math.trunc)).not.toBeInstanceOf(Array)
     })
 })
